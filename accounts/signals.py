@@ -12,7 +12,7 @@ was added to __init__.py file..... figure out why
 
 @receiver(post_save, sender=User)
 def connect_user(sender, instance=None, created=None, **kwargs):
-    print('pre_save for {}'.format(sender.__name__))
+    print('post_save for {}'.format(sender.__name__))
     if created:
         print('First time creation')
         Helpr_User.objects.create(user=instance)
